@@ -1,9 +1,6 @@
 # Item Catalog Project  
-[![catalogProject.png](https://s25.postimg.org/w8epjomn3/catalog_Project.png)](https://postimg.org/image/6pmd6o32z/)
-
 Developed a content management system using the Flask framework in Python. Authentication is provided via OAuth and all data is stored within a PostgreSQL database. Authenticated users will have the ability to post, edit, and delete their own items.  
 
-####Live version of this project is available at: https://catalog-2016.herokuapp.com/
 ## Tools and Frameworks
 This web application was built with HTML5, CSS, Bootstrap, Vagrant, Flask, SQLAlchemy, Google and Facebook Oauth2 & APIs.
 ## Instruction
