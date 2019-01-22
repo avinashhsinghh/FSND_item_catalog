@@ -10,18 +10,18 @@
     <link href="https://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div id="signinButton" class="col-md-4 col-md-offset-4 well text-center">
                 <h2>Catalog App</h2>
                 <p class="lead">Please login to create awesome categories and items of your own!</p>
                 <hr>
                 <div class="row">
-                    <div class="col-md-6 col-xs-6"><p>Login with Google</p></div>
-                    <div class="col-md-6 col-xs-6"><p>Login with Facebook</p></div>
+                    <div class="col-md-11 col-xs-6"><p>Login with Google</p></div>
+                  <!--  <div class="col-md-6 col-xs-6"><p>Login with Facebook</p></div>-->
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-xs-6">
+                    <div class="col-md-11 col-xs-6">
                         <span class="g-signin"
                               data-scope="openid email"
                               data-clientid="373960950025-ntlt4gollkbt4m6pa4kfh4ebi1m4dou8.apps.googleusercontent.com"
@@ -31,12 +31,6 @@
                               data-callback="signInCallBack"
                               data-approvalprompt="force">
                         </span>
-                    </div>
-                    <div class="col-md-6 col-xs-6">
-                        <fb:login-button size="large"
-                          scope="public_profile,email"
-                          onlogin="sendTokenToServer();">
-                        </fb:login-button>
                     </div>
                  </div>
             </div>
@@ -73,54 +67,6 @@
                 });
             }
         }
-    </script>
-
-    <!--Implement Facebook Log-in-->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1182957421764624',
-          xfbml      : true,
-          version    : 'v2.6'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-
-      function sendTokenToServer() {
-    var access_token = FB.getAuthResponse()['accessToken'];
-    console.log(access_token)
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-     $.ajax({
-      type: 'POST',
-      url: '/fbconnect?state={{STATE}}',
-      processData: false,
-      data: access_token,
-      contentType: 'application/octet-stream; charset=utf-8',
-      success: function(result) {
-        // Handle or verify the server response if necessary.
-        if (result) {
-          $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
-         setTimeout(function() {
-          window.location.href = "/catalog";
-         }, 4000);
-
-      } else {
-        $('#result').html('Failed to make a server-side call. Check your configuration and console.');
-         }
-      }
-
-  });
-    });
-  }
     </script>
 
 </body>

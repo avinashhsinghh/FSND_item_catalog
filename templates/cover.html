@@ -2,23 +2,7 @@
 {% block content %}
 {% include "header.html" %}
 
-    <!--<div class="row text-center welcome-msg">
-        <h1>Welcome to Catalog App</h1>
-    </div>
-    <div class="row">
-        <img src={{url_for('static', filename="workspace.jpg")}} class="img-responsive">
-    </div>
-    <hr>
-    <div class="row text-center">
-        <div class="col-md-4 col-md-offset-4">
-            <p class="lead">Are you ready to explore awesome categories, or even greater, create one of your own?</p>
-            <a href="/catalog">
-                <button class="btn btn-default" role="button">
-                    Let's Dive In &raquo;
-                </button>
-            </a>
-        </div>
-    </div>-->
+    <!--carousel slide for cover page-->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -43,7 +27,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="{{url_for('static', filename="workspace.jpg")}}" alt="...">
+      <img src="{{url_for('static', filename="workspace.jpg")}}" class="img-responsive" alt="...">
       <div class="carousel-caption">
         <h2>Welcome to Catalog App</h2>
         <hr>
@@ -56,7 +40,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="{{url_for('static', filename="workspace.jpg")}}" alt="...">
+      <img src="{{url_for('static', filename="workspace.jpg")}}" class="img-responsive" alt="...">
       <div class="carousel-caption">
         <h2>Welcome to Catalog App</h2>
         <hr>

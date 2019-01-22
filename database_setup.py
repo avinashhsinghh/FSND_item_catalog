@@ -1,11 +1,14 @@
+#Import modules
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 import datetime
 
+#Instance of Declarative Base
 Base = declarative_base()
 
+#Create Class User
 class User(Base):
     __tablename__ = 'user'
 
@@ -14,6 +17,7 @@ class User(Base):
     email = Column(String(250), nullable=False)
     picture = Column(String)
 
+    #We added this serialize function to be able to send JSON objects in a serializable format
     @property
     def serialize(self):
         return {
@@ -22,6 +26,7 @@ class User(Base):
 
         }
 
+#Create Class Category
 class Category(Base):
     __tablename__ = 'category'
 
@@ -31,6 +36,7 @@ class Category(Base):
     user = relationship(User)
     items = relationship("Item", cascade="all, delete-orphan")
 
+    #We added this serialize function to be able to send JSON objects in a serializable format
     @property
     def serialize(self):
         return {
@@ -39,6 +45,7 @@ class Category(Base):
             'user_id': self.user_id
         }
 
+#Create Class Item
 class Item(Base):
     __tablename__ = 'item'
 
@@ -52,6 +59,7 @@ class Item(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
+    #We added this serialize function to be able to send JSON objects in a serializable format
     @property
     def serialize(self):
         return {
@@ -61,6 +69,6 @@ class Item(Base):
             'user_id': self.user_id
         }
 
-
+#Create Engine and Connect to the Database
 engine = create_engine('sqlite:///catalog_database.db')
 Base.metadata.create_all(engine)
