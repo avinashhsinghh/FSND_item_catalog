@@ -61,7 +61,7 @@ To run the web application:
 
 ## The application provides a JSON endpoint, at the very least
 
-<img src="assets/catalog.png" width="800">
+<img src="assets/catalog_json.png" width="800">
 
 
 ## Possible improvements
