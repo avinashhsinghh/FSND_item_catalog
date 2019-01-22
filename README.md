@@ -7,7 +7,9 @@ The Item Catalog project consists of developing an application that provides a l
 This web application was built with HTML5, CSS, Bootstrap, Vagrant, Flask, SQLAlchemy, Google and Facebook Oauth2 & APIs.
 
 ## Instruction
-To run the web application:    
+To run the web application:
+1. Clone the repository using `sudo git clone https://github.com/avi1245/FSND_item_catalog.git`
+2. Install all required python package using `sudo pip install requirements.txt` present in the project directory.    
 1. From directory */FSND_item_catalog/*, initialize the application database by typing `python database_setup.py`  
 3. From directory */FSND_item_catalog/*, run the application within the VM by typing `python main.py` into the Terminal.  
 3. Access the application by visiting http://localhost:8000 locally on the browser.
