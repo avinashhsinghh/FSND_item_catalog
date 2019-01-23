@@ -20,6 +20,8 @@ To run the web application:
 
 `/<category_name>/items.json` - Returns JSON of for all items of a specific category.
 
+`/category/<category_name>/item/<item_name>/JSON` - Returns JSON for an arbitrary item in the catalog.
+
 `/categories.json` - Returns JSON of all categories in catalog.
 
 `/users.json` - Returns JSON of all users.
